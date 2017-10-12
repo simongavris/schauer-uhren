@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-rm-mattigschauer" >
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.title" />
+		</td>
+		<td>
+		{produkte.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.type" />
+		</td>
+		<td>
+		{produkte.type}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.category" />
+		</td>
+		<td>
+		{produkte.category}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.techdata" />
+		</td>
+		<td>
+		{produkte.techdata}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.description" />
+		</td>
+		<td>
+		{produkte.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.productfile" />
+		</td>
+		<td>
+				<a href="{produkte.productfile.originalResource.publicUrl}">
+					{produkte.productfile.originalResource.name}
+				</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.diagramfile" />
+		</td>
+		<td>
+				<a href="{produkte.diagramfile.originalResource.publicUrl}">
+					{produkte.diagramfile.originalResource.name}
+				</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_rmmattigschauer_domain_model_produkte.image" />
+		</td>
+		<td>
+				<f:image src="{produkte.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+</table>
+</html>

@@ -1,0 +1,118 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="main">
+
+
+
+    <div class="generated-products last-box">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="col-sm-12">
+                  <h3>Produktauswahl:</h3>
+                </div>
+
+                <div class="col-sm-4">
+                    <p id="cat1-name" style="float: left;">Kategorie:</p>
+                    <select id="analog_kat">
+                        <option>Alle</option>
+                        <f:for each="{sub1Categories}" as="sub1Category">
+                            <option>{sub1Category.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <p id="cat2-name" style="float: left;"></p>
+                    <select id="analog_uw">
+                    	<option>Alle</option>
+                        <f:for each="{sub2Categories}" as="sub2Category">
+                            <option>{sub2Category.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+
+                <div class="col-sm-1">
+                    <h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5>
+                </div>
+
+                <div class="col-sm-2">
+                    <div id="show-5" class="btn btn-default max-items">
+                        5
+                    </div>
+                    <div id="show-10" class="btn btn-default max-items">
+                        10
+                    </div>
+                    <div id="show-25" class="btn btn-default max-items">
+                        25
+                    </div>
+                </div>
+            </div>
+
+            <div id="generated-results" class="col-sm-12">
+
+                <f:for each="{produkte}" as="produkt">
+                    
+                    <div class="small-frame teaser-result-container">
+                    	<div class="col-sm-4 result-teaser-image">
+                        	
+                            <f:if condition="{produkt.image}">
+                            	<f:then>
+                            		<!--<f:image src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" alt="Image" width="" height="" />-->
+                                    <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="" height=""/>
+                            	</f:then>
+                                <f:else>
+                                	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                                    
+                                </f:else>
+                            </f:if>
+                            
+                       	</div>
+                        <div class="col-sm-5 result-teaser-text">
+    	                    <p style="margin-bottom: 0px;">{produkt.type}</p>
+	                        <h5>Außenbereich</h5>
+                            
+                            <f:if condition="{produkt.productfile}">
+                            	<f:then>
+                                    <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
+                            	</f:then>
+                                <f:else>
+                                	
+                                </f:else>
+                            </f:if>
+                            
+                            <a class="readMore-Text">Details</a>
+                        </div>
+        			</div>
+                    <div class="big-frame info-container" style="width: 1188px;">
+                    	<div class="col-sm-8 result-inner-text">
+                        	<f:format.raw>{produkt.techdata}</f:format.raw>
+                      	</div>
+                        <div class="col-sm-4 result-inner-picture">
+                            
+                            <f:if condition="{produkt.image}">
+                            	<f:then>
+                            		<!--<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />-->
+                            		<f:image src="{produkt.image.uid}" treatIdAsReference="1" />
+                                </f:then>
+                                <f:else>
+                                	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                                    
+                                </f:else>
+                            </f:if>
+                            
+                        </div>
+                    </div>
+                    
+                </f:for>
+                
+            </div>
+
+        </div>
+    </div>
+
+
+
+</f:section>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-09-21T02:07:04Z" product-name="rm_mattigschauer">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="techdata.description">
+				<source>techdata</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="productfile.description">
+				<source>productfile</source>
+			</trans-unit>
+			<trans-unit id="diagramfile.description">
+				<source>diagramfile</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="maincategory.description">
+				<source>maincategory</source>
+			</trans-unit>
+			<trans-unit id="subcategory1.description">
+				<source>subcategory1</source>
+			</trans-unit>
+			<trans-unit id="subcategory2.description">
+				<source>subcategory2</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

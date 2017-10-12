@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-09-21T02:07:04Z" product-name="rm_mattigschauer">
+		<header/>
+		<body>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte">
+				<source>Produkte</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.techdata">
+				<source>Techdata</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.productfile">
+				<source>Productfile</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.diagramfile">
+				<source>Diagramfile</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.maincategory">
+				<source>Maincategory</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.subcategory1">
+				<source>Subcategory1</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_produkte.subcategory2">
+				<source>Subcategory2</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_maincategory">
+				<source>Maincategory</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_maincategory.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory1">
+				<source>Subcategory1</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory1.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory1.maincategory">
+				<source>Maincategory</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory2">
+				<source>Subcategory2</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory2.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_rmmattigschauer_domain_model_subcategory2.maincategory">
+				<source>Maincategory</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
