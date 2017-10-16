@@ -53,10 +53,10 @@
             <div id="generated-results" class="col-sm-12">
 
                 <f:for each="{produkte}" as="produkt">
-                    
+
                     <div class="small-frame teaser-result-container">
-                    	<div class="col-sm-4 result-teaser-image">
-                        	
+                    	<div class="col-sm-3 result-teaser-image">
+
                             <f:if condition="{produkt.image}">
                             	<f:then>
                             		<!--<f:image src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" alt="Image" width="" height="" />-->
@@ -64,24 +64,24 @@
                             	</f:then>
                                 <f:else>
                                 	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-                                    
+
                                 </f:else>
                             </f:if>
-                            
+
                        	</div>
-                        <div class="col-sm-5 result-teaser-text">
+                        <div class="col-sm-7 result-teaser-text">
     	                    <p style="margin-bottom: 0px;">{produkt.type}</p>
 	                        <h5>Außenbereich</h5>
-                            
+
                             <f:if condition="{produkt.productfile}">
                             	<f:then>
                                     <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
                             	</f:then>
                                 <f:else>
-                                	
+
                                 </f:else>
                             </f:if>
-                            
+
                             <a class="readMore-Text">Details</a>
                         </div>
         			</div>
@@ -90,7 +90,7 @@
                         	<f:format.raw>{produkt.techdata}</f:format.raw>
                       	</div>
                         <div class="col-sm-4 result-inner-picture">
-                            
+
                             <f:if condition="{produkt.image}">
                             	<f:then>
                             		<!--<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />-->
@@ -98,15 +98,15 @@
                                 </f:then>
                                 <f:else>
                                 	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-                                    
+
                                 </f:else>
                             </f:if>
-                            
+
                         </div>
                     </div>
-                    
+
                 </f:for>
-                
+
             </div>
 
         </div>
