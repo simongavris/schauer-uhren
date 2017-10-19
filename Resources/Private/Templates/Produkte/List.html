@@ -13,23 +13,31 @@
                   <h3>Produktauswahl:</h3>
                 </div>
 
-                <div class="col-sm-6">
-                    <p id="cat1-name" style="float: left;">Bereich:</p>
-                    <select id="analog_kat">
-                        <option>Alle</option>
-                        <f:for each="{sub1Categories}" as="sub1Category">
-                            <option>{sub1Category.title}</option>
-                        </f:for>
-                    </select>
 
-                    <p id="cat2-name" style="float: left;">Uhrwerk:</p>
-                    <select id="analog_uw">
-                    	<option>Alle</option>
-                        <f:for each="{sub2Categories}" as="sub2Category">
-                            <option>{sub2Category.title}</option>
-                        </f:for>
-                    </select>
+                <div class="col-sm-6">
+
+                    <div class="option-select">
+                        <label for="analog_kat" id="cat1-name">Bereich:</label>
+                        <select id="analog_kat">
+                            <option>Alle</option>
+                            <f:for each="{sub1Categories}" as="sub1Category">
+                                <option>{sub1Category.title}</option>
+                            </f:for>
+                        </select>
+                    </div>
+                    <div class="option-select">
+                        <label for="analog_uw" id="cat2-name" style="float: left;">Uhrwerk:</label>
+                        <select id="analog_uw">
+                            <option>Alle</option>
+                            <f:for each="{sub2Categories}" as="sub2Category">
+                                <option>{sub2Category.title}</option>
+                            </f:for>
+                        </select>
+                    </div>
                 </div>
+
+
+
                 <div class="col-sm-6">
                   <div class="col-sm-1">
                       <h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5>
