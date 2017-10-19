@@ -1,6 +1,4 @@
-page.includeCSS.mattigschauer_footer = EXT:rm_mattigschauer/Resources/Public/Css/footer.css
 page.includeCSS.mattigschauer_style = EXT:rm_mattigschauer/Resources/Public/Css/style.css
-
 page.includeJSFooter.mattigschauer = EXT:rm_mattigschauer/Resources/Public/Js/script.js
 
 
