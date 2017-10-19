@@ -14,7 +14,7 @@
                 </div>
 
 
-                <div class="col-sm-6">
+                <div class="col-md-6 col-xs-12">
 
                     <div class="option-select">
                         <label for="analog_kat" id="cat1-name">Bereich:</label>
@@ -38,7 +38,7 @@
 
 
 
-                <div class="col-sm-6">
+                <div class="col-md-6 col-xs-12">
                   <div class="col-sm-1">
                       <h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5>
 
@@ -58,38 +58,39 @@
             <div id="generated-results" class="col-sm-12">
 
                 <f:for each="{produkte}" as="produkt">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="small-frame teaser-result-container">
+                            <div class="col-sm-4 result-teaser-image">
 
-                    <div class="small-frame teaser-result-container">
-                    	<div class="col-sm-4 result-teaser-image">
+                                <f:if condition="{produkt.image}">
+                                    <f:then>
+                                        <!--<f:image src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" alt="Image" width="" height="" />-->
+                                        <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="" height=""/>
+                                    </f:then>
+                                    <f:else>
+                                        <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
 
-                            <f:if condition="{produkt.image}">
-                            	<f:then>
-                            		<!--<f:image src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" alt="Image" width="" height="" />-->
-                                    <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="" height=""/>
-                            	</f:then>
-                                <f:else>
-                                	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                                    </f:else>
+                                </f:if>
 
-                                </f:else>
-                            </f:if>
+                            </div>
+                            <div class="col-sm-8 result-teaser-text">
+                                <p style="margin-bottom: 0px;">{produkt.type}</p>
+                                <h5>Außenbereich</h5>
 
-                       	</div>
-                        <div class="col-sm-8 result-teaser-text">
-    	                    <p style="margin-bottom: 0px;">{produkt.type}</p>
-	                        <h5>Außenbereich</h5>
+                                <f:if condition="{produkt.productfile}">
+                                    <f:then>
+                                        <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
+                                    </f:then>
+                                    <f:else>
 
-                            <f:if condition="{produkt.productfile}">
-                            	<f:then>
-                                    <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
-                            	</f:then>
-                                <f:else>
+                                    </f:else>
+                                </f:if>
 
-                                </f:else>
-                            </f:if>
-
-                            <a class="readMore-Text">Details</a>
+                                <a class="readMore-Text">Details</a>
+                            </div>
                         </div>
-        			</div>
+                    </div>
                     <div class="big-frame info-container" style="width: 1188px;">
                     	<div class="col-sm-8 result-inner-text">
                         	<f:format.raw>{produkt.techdata}</f:format.raw>
