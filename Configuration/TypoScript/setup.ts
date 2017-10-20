@@ -1,4 +1,4 @@
-page.includeCSS.mattigschauer_style = EXT:rm_mattigschauer/Resources/Public/Css/style.css
+//TODO: Cleanup- extensionsscripts should be in extensions and not in main install
 page.includeJSFooter.mattigschauer = EXT:rm_mattigschauer/Resources/Public/Js/script.js
 
 
