@@ -25,7 +25,7 @@
                            <numIndex index="0">Detail View</numIndex>
                            <numIndex index="1">Produkte->show</numIndex>
                           </numIndex>
-                          <numIndex index="1" type="array">
+                          <numIndex index="2" type="array">
                            <numIndex index="0">Index Liste</numIndex>
                            <numIndex index="1">Produkte->indexlist</numIndex>
                           </numIndex>
