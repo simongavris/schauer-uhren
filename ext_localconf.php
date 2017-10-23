@@ -18,7 +18,7 @@ call_user_func(
         );
 		
 		
-		\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'Rawk.RmMattigschauer',
             'ajaxfunc',
             [

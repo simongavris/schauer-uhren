@@ -66,7 +66,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $this->produkteRepository->setDefaultQuerySettings($querySettings);
         $this->maincategoryRepository->setDefaultQuerySettings($querySettings);
         $this->subcategory1Repository->setDefaultQuerySettings($querySettings);
-		$this->subcategory2Repository->setDefaultQuerySettings($querySettings);
+        $this->subcategory2Repository->setDefaultQuerySettings($querySettings);
     }
 
     /**
@@ -121,8 +121,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         #print_r($data);
 
         #$produkte = $this->produkteRepository->findAll();
-		#$produkte = $this->produkteRepository->findByMaincategory($getCat);
-		$produkte = $this->produkteRepository->findByCatUids($getCat);
+        #$produkte = $this->produkteRepository->findByMaincategory($getCat);
+        $produkte = $this->produkteRepository->findByCatUids($getCat);
         $this->view->assign('produkte', $produkte);
     }
 
@@ -132,8 +132,22 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      * @param \Rawk\RmMattigschauer\Domain\Model\Produkte $produkte
      * @return void
      */
-    public function showAction(\Rawk\RmMattigschauer\Domain\Model\Produkte $produkte)
+    public function showAction(\Rawk\RmMattigschauer\Domain\Model\Produkte $produkte = null)
     {
-        $this->view->assign('produkte', $produkte);
+        #$param = $this->request->getArgument('tx_rmmattigschauer_msproducts');
+        $param = (int)$this->request->getArgument('produkt');
+
+        #print_r($param);
+
+        $produkt = $this->produkteRepository->findByUid($param);
+
+        if(!$produkt){
+       return "nix";
+        }else{
+
+        #$produkt = $this->produktRepository->findById($this->request->getArgument('produktkate'));
+        $this->view->assign('produkte', $produkt);
+
+        }
     }
 }
