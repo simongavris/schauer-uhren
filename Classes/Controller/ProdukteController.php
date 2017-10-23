@@ -129,7 +129,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     public function indexlistAction()
     {
    	
-        /*$getCat = $this->settings['category'];
+        $getCat = $this->settings['category'];
 
         #$mainCategory = $this->maincategoryRepository->findAll();
         #$this->view->assign('mainCategory', $mainCategory);
@@ -142,7 +142,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $sub2Categories = $this->subcategory2Repository->findByMaincategoryUID($getCat);
         $this->view->assign('sub2Categories', $sub2Categories);
 
-        $produkte = $this->produkteRepository->findByCatUids($getCat);*/
+        $produkte = $this->produkteRepository->findByCatUids($getCat);
         $this->view->assign('produkte', $produkte);
     }
 
