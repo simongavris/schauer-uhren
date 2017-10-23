@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="main">
+
+    <div class="">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="col-sm-12">
+                  <h3><f:translate key="tx_rmmattigschauer_domain_model_produkte.producttitle" /></h3>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <f:for each="{produkte}" as="produkt">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="">
+                         
+                            <div class="col-sm-8">
+                                <p style="margin-bottom: 0px;">{produkt.type}</p>
+                                <h5>Außenbereich</h5>
+                          
+                                <f:link.page pageUid="" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Details Test</f:link.page>
+                                
+                            </div>
+                        </div>
+                    </div>
+                  
+                </f:for>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</f:section>
+</html>

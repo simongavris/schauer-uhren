@@ -125,6 +125,26 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $produkte = $this->produkteRepository->findByCatUids($getCat);
         $this->view->assign('produkte', $produkte);
     }
+    
+    public function indexlistAction()
+    {
+   	
+        /*$getCat = $this->settings['category'];
+
+        #$mainCategory = $this->maincategoryRepository->findAll();
+        #$this->view->assign('mainCategory', $mainCategory);
+		
+        #$sub1Categories = $this->subcategory1Repository->findAll();
+        $sub1Categories = $this->subcategory1Repository->findByMaincategoryUID($getCat);
+        $this->view->assign('sub1Categories', $sub1Categories);
+		
+        #$sub2Categories = $this->subcategory2Repository->findAll();
+        $sub2Categories = $this->subcategory2Repository->findByMaincategoryUID($getCat);
+        $this->view->assign('sub2Categories', $sub2Categories);
+
+        $produkte = $this->produkteRepository->findByCatUids($getCat);*/
+        $this->view->assign('produkte', $produkte);
+    }
 
     /**
      * action show
