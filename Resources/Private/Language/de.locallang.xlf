@@ -9,11 +9,11 @@
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.title">
                 <source>Title</source>
-                <target state="translated">Produktauswahl DE</target>
+                <target state="translated">Title</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.producttitle">
-                <source>Produktauswahl ENG</source>
-                <target state="translated">Produktauswahl ENG</target>
+                <source>Product Selection</source>
+                <target state="translated">Produktauswahl</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.type">
                 <source>Type</source>
@@ -24,8 +24,8 @@
                 <target state="translated">Kategorie</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.techdata">
-                <source>Techdata</source>
-                <target state="translated">Techdata</target>
+                <source>Technical specifications</source>
+                <target state="translated">Technische Daten</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.description">
                 <source>Description</source>
