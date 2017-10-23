@@ -87,6 +87,19 @@
                 <source>Maincategory</source>
                 <target state="translated">Unterkategorie 2 Hauptkategorie</target>
             </trans-unit>
+            <trans-unit id="tx_rmmattigschauer_domain_model_produkte.maincategory">
+                <source>Area</source>
+                <target state="translated">Bereich</target>
+            </trans-unit>
+
+            <trans-unit id="tx_rmmattigschauer_domain_model_produkte.all">
+                <source>All</source>
+                <target state="translated">Alle</target>
+            </trans-unit>
+            <trans-unit id="tx_rmmattigschauer_domain_model_produkte.clockwerk">
+                <source>Clockwerk</source>
+                <target state="translated">Uhrwerk</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

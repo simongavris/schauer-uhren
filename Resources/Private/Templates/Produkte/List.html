@@ -17,18 +17,18 @@
                 <div class="col-sm-6 col-xs-12">
                     <div class="select-container">
                         <div class="option-select">
-                            <label for="analog_kat" id="cat1-name">Bereich:</label>
+                            <label for="analog_kat" id="cat1-name"><h3><f:translate key="tx_rmmattigschauer_domain_model_produkte.area" /></h3>:</label>
                             <select id="analog_kat">
-                                <option>Alle</option>
+                                <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
                                 <f:for each="{sub1Categories}" as="sub1Category">
                                     <option>{sub1Category.title}</option>
                                 </f:for>
                             </select>
                         </div>
                         <div class="option-select">
-                            <label for="analog_uw" id="cat2-name">Uhrwerk:</label>
+                            <label for="analog_uw" id="cat2-name"><f:translate key="tx_rmmattigschauer_domain_model_produkte.clockwerk" />:</label>
                             <select id="analog_uw">
-                                <option>Alle</option>
+                                <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
                                 <f:for each="{sub2Categories}" as="sub2Category">
                                     <option>{sub2Category.title}</option>
                                 </f:for>

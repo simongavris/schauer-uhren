@@ -66,6 +66,9 @@
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory2.maincategory">
                 <source>Maincategory</source>
             </trans-unit>
+            <trans-unit id="tx_rmmattigschauer_domain_model_produkte.area">
+                <source>Area</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
