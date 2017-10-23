@@ -79,25 +79,24 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         #$allCategories = $this->categoryRepository->findAll();
         #$this->view->assign('allCategories', $allCategories);
 		
-		$getCat = $this->settings['category'];
-        #print_r($this->settings['category']);
+        $getCat = $this->settings['category'];
+        $pageUid = (int)$this->settings['detailPid'];
+        
+        #print_r($this->settings['detailPid']);
 		
 		
-		/* new Categories */
+        /* new Categories */
 		
-		#$mainCategory = $this->maincategoryRepository->findAll();
+        #$mainCategory = $this->maincategoryRepository->findAll();
         #$this->view->assign('mainCategory', $mainCategory);
 		
-		#$sub1Categories = $this->subcategory1Repository->findAll();
-		$sub1Categories = $this->subcategory1Repository->findByMaincategoryUID($getCat);
+        #$sub1Categories = $this->subcategory1Repository->findAll();
+        $sub1Categories = $this->subcategory1Repository->findByMaincategoryUID($getCat);
         $this->view->assign('sub1Categories', $sub1Categories);
 		
-		#$sub2Categories = $this->subcategory2Repository->findAll();
-		$sub2Categories = $this->subcategory2Repository->findByMaincategoryUID($getCat);
+        #$sub2Categories = $this->subcategory2Repository->findAll();
+        $sub2Categories = $this->subcategory2Repository->findByMaincategoryUID($getCat);
         $this->view->assign('sub2Categories', $sub2Categories);
-		
-		
-		
 		
         #$categoriesWithContacts = [];
         /** @var \TYPO3\CMS\Extbase\Domain\Model\Category $category */
@@ -123,6 +122,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         #$produkte = $this->produkteRepository->findAll();
         #$produkte = $this->produkteRepository->findByMaincategory($getCat);
         $produkte = $this->produkteRepository->findByCatUids($getCat);
+        
+        $this->view->assign('pageUid', $pageUid);
         $this->view->assign('produkte', $produkte);
     }
     
@@ -130,6 +131,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
    	
         $getCat = $this->settings['category'];
+        $pageUid = (int)$this->settings['detailPid'];
+        
 
         #$mainCategory = $this->maincategoryRepository->findAll();
         #$this->view->assign('mainCategory', $mainCategory);
@@ -143,6 +146,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $this->view->assign('sub2Categories', $sub2Categories);
 
         $produkte = $this->produkteRepository->findByCatUids($getCat);
+        
+        $this->view->assign('pageUid', $pageUid);
         $this->view->assign('produkte', $produkte);
     }
 
@@ -162,11 +167,11 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $produkt = $this->produkteRepository->findByUid($param);
 
         if(!$produkt){
-       return "nix";
+            return "keine Produkte";
         }else{
 
-        #$produkt = $this->produktRepository->findById($this->request->getArgument('produktkate'));
-        $this->view->assign('produkte', $produkt);
+            #$produkt = $this->produktRepository->findById($this->request->getArgument('produktkate'));
+            $this->view->assign('produkte', $produkt);
 
         }
     }
