@@ -1,70 +1,91 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2017-09-21T02:07:04Z" product-name="rm_mattigschauer">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-09-21T02:07:04Z" product-name="rm_mattigschauer">
         <header/>
         <body>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte">
                 <source>Products</source>
+                <target state="translated">Produkte</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.title">
                 <source>Title</source>
+                <target state="translated">Produktauswahl DE</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.producttitle">
                 <source>Produktauswahl ENG</source>
+                <target state="translated">Produktauswahl ENG</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.type">
                 <source>Type</source>
+                <target state="translated">Typ</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.category">
                 <source>Category</source>
+                <target state="translated">Kategorie</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.techdata">
                 <source>Techdata</source>
+                <target state="translated">Techdata</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.description">
                 <source>Description</source>
+                <target state="translated">Beschreibung</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.productfile">
                 <source>Productfile</source>
+                <target state="translated">Produktdatei</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.diagramfile">
                 <source>Diagramfile</source>
+                <target state="translated">Diagram</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.image">
                 <source>Image</source>
+                <target state="translated">Bild</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.maincategory">
                 <source>Maincategory</source>
+                <target state="translated">Hauptkategorie</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.subcategory1">
                 <source>Subcategory1</source>
+                <target state="translated">Unterkategorie 1</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_produkte.subcategory2">
                 <source>Subcategory2</source>
+                <target state="translated">Unterkategorie 2</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_maincategory">
                 <source>Maincategory</source>
+                <target state="translated">Hauptkategorie</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_maincategory.title">
                 <source>Title</source>
+                <target state="translated">Hauptkategorie Titel</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory1">
                 <source>Subcategory1</source>
+                <target state="translated">Hauptkategorie Unterkategorie 1</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory1.title">
                 <source>Title</source>
+                <target state="translated">Unterkategorie 1 Titel</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory1.maincategory">
                 <source>Maincategory</source>
+                <target state="translated">Unterkategorie 1 Hauptkategorie DE</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory2">
                 <source>Subcategory2</source>
+                <target state="translated">Unterkategorie 2 Unterkategorie</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory2.title">
                 <source>Title</source>
+                <target state="translated">Unterkategorie 2 Titel</target>
             </trans-unit>
             <trans-unit id="tx_rmmattigschauer_domain_model_subcategory2.maincategory">
                 <source>Maincategory</source>
+                <target state="translated">Unterkategorie 2 Hauptkategorie</target>
             </trans-unit>
         </body>
     </file>
