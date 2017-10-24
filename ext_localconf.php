@@ -9,11 +9,11 @@ call_user_func(
             'Rawk.RmMattigschauer',
             'Msproducts',
             [
-                'Produkte' => 'list, show'
+                'Produkte' => 'list, show, indexlist'
             ],
             // non-cacheable actions
             [
-                'Produkte' => 'list, show'
+                //'Produkte' => 'list, show'
             ]
         );
 		
