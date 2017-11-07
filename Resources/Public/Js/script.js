@@ -54,12 +54,13 @@ var viewState=0 ;
 //die Klasse 'Product' wird hier definiert.
 function Product(teaserImageSrc, number, name, downloadLink, productText, productPicture1, productPicture2){
   this.teaserImageSrc = teaserImageSrc;
-  this.number = number;
+/**/  this.number = number;
   this.name = name;
   this.downloadLink = downloadLink;
   this.productText = productText;
   this.productPicture1 = productPicture1;
   this.productPicture2 = productPicture2;
+  this.productList = new Array()
 }
 
 //hier wird zu Testzwecken ein neuer Array mit neuen Objekten des Typen 'Product' gefüllt

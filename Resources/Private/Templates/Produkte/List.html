@@ -48,7 +48,17 @@
 
             <div id="generated-results" class="col-sm-12 clock-view">
 
-                <f:for each="{produkte}" as="produkt">
+                <f:for each="{produkte}" as="produkt" iteration="iterator">
+                    <f:if condition="{iterator.cycle} < 10">
+
+
+<!--
+                    <script>
+                    productList.push(new Product(teaserImageSrc, number, name, downloadLink, productText, productPicture1, productPicture2))
+
+                    </script>
+-->
+
                     <div class="col-sm-12 col-xs-12">
                         <div class="small-frame teaser-result-container">
                             <div class="col-sm-4 result-teaser-image">
@@ -105,7 +115,7 @@
 
                         </div>
                     </div>
-
+                    </f:if>
                 </f:for>
 
             </div>
