@@ -39,6 +39,7 @@ ajax_api {
         debug = 0
         no_cache = 1
         admPanel = 0
+        noPageTitle = 2
     }
  
     10 < tt_content.list.20.rmmattigschauer_ajaxfunc

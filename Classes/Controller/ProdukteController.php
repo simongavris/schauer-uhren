@@ -159,6 +159,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function showAction(\Rawk\RmMattigschauer\Domain\Model\Produkte $produkte = null)
     {
+
+
         #$param = $this->request->getArgument('tx_rmmattigschauer_msproducts');
         $param = (int)$this->request->getArgument('produkt');
 
@@ -166,9 +168,15 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
         $produkt = $this->produkteRepository->findByUid($param);
 
+
+
         if(!$produkt){
             return "keine Produkte";
         }else{
+
+            $this->objectManager->get(\TYPO3\CMS\Core\Page\PageRenderer::class)->setTitle($produkt->getTitle());
+            // For the search
+            $GLOBALS['TSFE']->indexedDocTitle = $produkt->getTitle();
 
             #$produkt = $this->produktRepository->findById($this->request->getArgument('produktkate'));
             $this->view->assign('produkte', $produkt);
