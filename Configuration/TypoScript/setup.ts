@@ -42,7 +42,7 @@ ajax_api {
         admPanel = 0
         noPageTitle = 2
     }
- 
+
     10 < tt_content.list.20.rmmattigschauer_ajaxfunc
 	#10 < tt_content.list.20.msproducts_ajax
 }
