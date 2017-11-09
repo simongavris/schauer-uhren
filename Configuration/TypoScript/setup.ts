@@ -1,5 +1,6 @@
 page.includeJSFooter.mattigschauer = EXT:rm_mattigschauer/Resources/Public/Js/script.js
 
+page.config.noPageTitle = 2
 
 plugin.tx_rmmattigschauer_msproducts {
     view {
