@@ -35,7 +35,7 @@ class ProdukteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param string String containing uids
      * @return \Rawk\RmMattigschauer\Domain\Model\Produkte Matching model records
      */
-    public function findByCatUids($uids) {
+    public function findByCatUids($uids, $limit = null) {
         $uidArray = explode(",", $uids);
         $query = $this->createQuery();
         
