@@ -128,7 +128,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             if($cat01 != null || $cat02 != null){
                 $produkt = $this->produkteRepository->findLimited($param, $xID, $cat00, $cat01, $cat02, $number, $limit);
             }else{
-                $produkt = $this->produkteRepository->findByCatUids($cat00, $limit);
+                $produkt = $this->produkteRepository->findByCatUids($cat00, $limit, $number);
             }
 
             $x = count($produkt);
