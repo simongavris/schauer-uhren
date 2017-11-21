@@ -1,3 +1,4 @@
+page.includeJSFooter.mattigschauer01 = EXT:rm_mattigschauer/Resources/Public/Js/ajax.js
 page.includeJSFooter.mattigschauer = EXT:rm_mattigschauer/Resources/Public/Js/script.js
 
 page.config.noPageTitle = 2
