@@ -7,7 +7,7 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'Rawk.RmMattigschauer',
-            'Msproducts',
+            'msproducts',
             'Mattig Schauer Produkte'
         );
 
