@@ -7,13 +7,13 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'Rawk.RmMattigschauer',
-            'Msproducts',
+            'msproducts',
             [
-                'Produkte' => 'list, show, indexlist'
+                'Produkte' => 'list,show,indexlist,ajax'
             ],
             // non-cacheable actions
             [
-                //'Produkte' => 'list, show'
+                'Produkte' => 'list,show,indexlist,ajax'
             ]
         );
 		
@@ -22,11 +22,11 @@ call_user_func(
             'Rawk.RmMattigschauer',
             'ajaxfunc',
             [
-                'Ajax' => 'list'
+                'Ajax' => 'list,show,indexlist,ajax'
             ],
             // non-cacheable actions
             [
-                'Ajax' => 'list'
+                'Ajax' => 'list,show,indexlist,ajax'
             ]
         );
 		
