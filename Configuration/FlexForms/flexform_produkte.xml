@@ -17,18 +17,22 @@
                            <numIndex index="0"></numIndex>
                            <numIndex index="1"></numIndex>
                           </numIndex>-->
-                          <numIndex index="0" type="array">
+                        <numIndex index="0" type="array">
                            <numIndex index="0">List View</numIndex>
                            <numIndex index="1">Produkte->list</numIndex>
-                           </numIndex>
-                          <numIndex index="1" type="array">
+                        </numIndex>
+                        <numIndex index="1" type="array">
                            <numIndex index="0">Detail View</numIndex>
                            <numIndex index="1">Produkte->show</numIndex>
-                          </numIndex>
-                          <numIndex index="2" type="array">
+                        </numIndex>
+                        <numIndex index="2" type="array">
                            <numIndex index="0">Index Liste</numIndex>
                            <numIndex index="1">Produkte->indexlist</numIndex>
-                          </numIndex>
+                        </numIndex>
+                        <numIndex index="3" type="array">
+                            <numIndex index="0">Ajax</numIndex>
+                            <numIndex index="1">Produkte->ajax</numIndex>
+                        </numIndex>
                           <!--<numIndex index="3" type="array">
                            <numIndex index="0">LLL:EXT:cms/locallang_ttc.php:recursive.I.3</numIndex>
                            <numIndex index="1">3</numIndex>
