@@ -47,9 +47,10 @@
 
             <div id="generated-results" class="col-sm-12 clock-view">
 
-				{counter}
-                   
-   				<f:for each="{produkte}" as="produkt">
+				<!-- maximumNumberOfLinks: 1 -->
+                <f:widget.paginate objects="{produkte}" as="paginatedProdukte" configuration="{itemsPerPage: limit, insertAbove: 1, insertBelow: 1}">
+   
+   				<f:for each="{paginatedProdukte}" as="produkt">
                     <div class="col-sm-12 col-xs-12">
                         <div class="small-frame teaser-result-container">
                             <div class="col-sm-4 result-teaser-image">
@@ -86,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="big-frame info-container" style="width: 1188px;">
+                    <!--<div class="big-frame info-container" style="width: 1188px;">
                     	<div class="col-sm-8 result-inner-text">
                         	<f:format.raw>{produkt.techdata}</f:format.raw>
                       	</div>
@@ -103,22 +104,29 @@
                             </f:if>
 
                         </div>
-                    </div>
+                    </div>-->
 
                 </f:for>
+                
+                </f:widget.paginate>
 
             </div>
             
             <div class="col-sm-12 load_more">
-                          
+            	
+                <!--<button class="load">Load more</button>
+                <f:link.action pageUid="361" pageType="0" action="ajax" controller="Produkte" arguments="{product:'156'}" class="load_button"><button>Go</button></f:link.action>
+                 
+               
+                
+                -->
+              
               	<input type="hidden" id="ms-getcat" value="{getCat}">
                 <input type="hidden" id="ms-page" value="0">
-                 <input type="hidden" id="ms-link" value="index.php?id=192">
+                 <input type="hidden" id="ms-link" value="">
                 <input type="hidden" id="ms-limit" value="{limit}">
-                         
-                <!--<f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button" noCacheHash="1" noCache="1"><button>Go</button></f:link.action>-->
-                
-                <f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button"><button>Go</button></f:link.action>
+                                
+                <f:link.action pageUid="361" pageType="0" action="ajax" controller="Produkte" class="load_button"><button>No Go</button></f:link.action>
             
             </div>
 
