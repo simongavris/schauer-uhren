@@ -14,7 +14,7 @@
 
                     <f:if condition="{produkt.image}">
                         <f:then>
-                            <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="" height=""/>
+                            <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="500" height="" absolute="1" />
                         </f:then>
                         <f:else>
                             <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
@@ -52,7 +52,7 @@
 
                 <f:if condition="{produkt.image}">
                     <f:then>
-                        <f:image src="{produkt.image.uid}" treatIdAsReference="1" />
+                        <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="500" height="" absolute="1" />
                     </f:then>
                     <f:else>
                         <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
