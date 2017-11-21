@@ -29,28 +29,32 @@ class ProdukteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
     }
 	
-	/**
-	 * Find by multiple Cat-Uids using, seperated string. 
-	 * 
-	 * @param string String containing uids
-	 * @return \Rawk\RmMattigschauer\Domain\Model\Produkte Matching model records
-	 */
-	public function findByCatUids($uids) {
-		$uidArray = explode(",", $uids);
-		$query = $this->createQuery();
-		foreach ($uidArray as $key => $value) {
-			$constraints[] =  $query->equals('maincategory', $value);
-		}
-		return $query->matching(
-			$query->logicalAnd(
-				$query->logicalOr(
-					$constraints
-				),
-				$query->equals('hidden', 0),
-				$query->equals('deleted', 0)
-			)
-		)->execute();
-	}
+    /**
+     * Find by multiple Cat-Uids using, seperated string. 
+     * 
+     * @param string String containing uids
+     * @return \Rawk\RmMattigschauer\Domain\Model\Produkte Matching model records
+     */
+    public function findByCatUids($uids) {
+        $uidArray = explode(",", $uids);
+        $query = $this->createQuery();
+        
+        if($limit)
+            $query->setLimit($limit);
+        
+        foreach ($uidArray as $key => $value) {
+                $constraints[] =  $query->equals('maincategory', $value);
+        }
+        return $query->matching(
+                $query->logicalAnd(
+                        $query->logicalOr(
+                                $constraints
+                        ),
+                        $query->equals('hidden', 0),
+                        $query->equals('deleted', 0)
+                )
+        )->execute();
+    }
 
     /**
      * Find all events (limited to a amount of years)
@@ -64,4 +68,59 @@ class ProdukteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     {
 
     }
+    
+     /**
+     * Find limited events
+     *
+     * @return array
+     */
+    public function findLimited($param = null, $xID = null, $cat00 = null, $cat01 = null, $cat02 = null, $number = null, $limit = null)
+    {
+		
+        $uidCat00 = explode(",", $cat00);
+        $uidCat01 = explode(",", $cat01);
+        $uidCat02 = explode(",", $cat02);
+
+        $query = $this->createQuery();
+        //$query->execute();
+
+        if($number)
+                $query->setOffset($limit*$number);
+
+        if($limit)
+                $query->setLimit($limit);
+
+        foreach ($uidCat00 as $key => $value) {
+                $constraints00[] =  $query->equals('maincategory', $value);
+        }	
+
+        if($cat01 != null || $cat01 != ''){
+                foreach ($uidCat01 as $key => $value) {
+                        $constraints01[] =  $query->equals('subcategory1', $value);
+                }
+        }
+
+        if($cat02 != null || $cat02 != ''){
+                foreach ($uidCat02 as $key => $value) {
+                        $constraints01[] =  $query->equals('subcategory2', $value);
+                }
+        }
+
+        $query->matching(
+                $query->logicalAnd(
+                        $query->logicalOr(
+                                $constraints00
+                        ),
+                        $query->logicalAnd(
+                                $constraints01
+                        ),
+                        $query->equals('hidden', 0),
+                        $query->equals('deleted', 0)
+                )
+        );
+
+        return $query->execute();
+		
+    }
+    
 }
