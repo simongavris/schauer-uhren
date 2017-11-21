@@ -61,8 +61,6 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
         $querySettings->setRespectStoragePage(FALSE);
-        #$querySettings->setIgnoreEnableFields(TRUE);
-        #$querySettings->setIncludeDeleted(TRUE);
         $this->produkteRepository->setDefaultQuerySettings($querySettings);
         $this->maincategoryRepository->setDefaultQuerySettings($querySettings);
         $this->subcategory1Repository->setDefaultQuerySettings($querySettings);
@@ -76,66 +74,90 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function listAction()
     {
-        #$allCategories = $this->categoryRepository->findAll();
-        #$this->view->assign('allCategories', $allCategories);
 		
         $getCat = $this->settings['category'];
         $pageUid = (int)$this->settings['detailPid'];
         
-        #print_r($this->settings['detailPid']);
-		
-		
+        $limit = 5;
+                
         /* new Categories */
-		
-        #$mainCategory = $this->maincategoryRepository->findAll();
-        #$this->view->assign('mainCategory', $mainCategory);
-		
-        #$sub1Categories = $this->subcategory1Repository->findAll();
+
         $sub1Categories = $this->subcategory1Repository->findByMaincategoryUID($getCat);
         $this->view->assign('sub1Categories', $sub1Categories);
 		
-        #$sub2Categories = $this->subcategory2Repository->findAll();
         $sub2Categories = $this->subcategory2Repository->findByMaincategoryUID($getCat);
         $this->view->assign('sub2Categories', $sub2Categories);
-		
-        #$categoriesWithContacts = [];
-        /** @var \TYPO3\CMS\Extbase\Domain\Model\Category $category */
-        /*foreach($allCategories as $category) {
-          $contactsInCategory= $this->produkteRepository->findByCategory($category);
-          if($contactsInCategory->count()>0) {
-          $categoriesWithContacts[] = [
-          'category' => $category,
-          'contacts' => $contactsInCategory
-          ];
-          }
-          }
-          $this->view->assignMultiple([
-          'categoriesWithContacts' => $categoriesWithContacts
-          ]);*/
 
-        #$query->getQuerySettings()->setRespectStoragePage(false);
-        #$data = $this->configurationManager->getContentObject()->data;
-        #$storagePids = Array();
-        #$storagePids = explode(',',$data['pages']);
-        #print_r($data);
-
-        #$produkte = $this->produkteRepository->findAll();
-        #$produkte = $this->produkteRepository->findByMaincategory($getCat);
-        $produkte = $this->produkteRepository->findByCatUids($getCat);
+        $all = $this->produkteRepository->findByCatUids($getCat);
+	
+        $produkte = $this->produkteRepository->findByCatUids($getCat, $limit);
         
+        $nprodukte = count($produkte);
+        $nall = count($all);
+        $nperpage = intval($nall / $limit);
+
+        $counter = "Anzahl: ".$nprodukte." von ".$nall." - Seite: 1 von ".$nperpage; 
+		
+        $this->view->assign('counter', $counter);
+        $this->view->assign('getCat', $getCat);
+        $this->view->assign('limit', $limit);
         $this->view->assign('pageUid', $pageUid);
         $this->view->assign('produkte', $produkte);
     }
+    
+     /**
+     * action ajax
+     *
+     * @return void
+     */
+    public function ajaxAction()
+    {
+
+        $parameters = $this->request->getArguments();
+
+        if(isset($parameters['product'])){
+
+            $param = (int)$parameters['product'];
+            $xID = (int)$parameters['xID'];
+            $cat00 = (int)$parameters['cat00'];
+            $cat01 = (int)$parameters['cat01'];
+            $cat02 = (int)$parameters['cat02'];
+            $number = (int)$parameters['number'];
+            $limit = (int)$parameters['limit'];
+
+            if($cat01 != null || $cat02 != null){
+                $produkt = $this->produkteRepository->findLimited($param, $xID, $cat00, $cat01, $cat02, $number, $limit);
+            }else{
+                $produkt = $this->produkteRepository->findByCatUids($cat00, $limit);
+            }
+
+            $x = count($produkt);
+
+            $y = "Seite: ".$number." - Anzahl pro Seite: ".$limit." - Seitenanzahl: "." - ";
+
+            if(!$produkt){
+                return "keine Produkte";
+            }else{
+
+                $this->view->assign('x', $x);
+                $this->view->assign('y', $y);
+                $this->view->assign('parameters', $parameters);
+                $this->view->assign('produkte', $produkt);
+
+            }
+
+        }else{
+            //echo "empty";	
+        }
+		
+    }
+    
     
     public function indexlistAction()
     {
    	
         $getCat = $this->settings['category'];
         $pageUid = (int)$this->settings['detailPid'];
-        
-
-        #$mainCategory = $this->maincategoryRepository->findAll();
-        #$this->view->assign('mainCategory', $mainCategory);
 		
         #$sub1Categories = $this->subcategory1Repository->findAll();
         $sub1Categories = $this->subcategory1Repository->findByMaincategoryUID($getCat);
@@ -159,16 +181,10 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function showAction(\Rawk\RmMattigschauer\Domain\Model\Produkte $produkte = null)
     {
-
-
         #$param = $this->request->getArgument('tx_rmmattigschauer_msproducts');
         $param = (int)$this->request->getArgument('produkt');
 
-        #print_r($param);
-
         $produkt = $this->produkteRepository->findByUid($param);
-
-
 
         if(!$produkt){
             return "keine Produkte";
