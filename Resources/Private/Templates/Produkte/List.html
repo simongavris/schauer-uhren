@@ -44,10 +44,13 @@
                     </div>
                 </div>
             </div>
+		
+	 <button class="ms_previous">Zurück</button> <button class="ms_next">Vor</button>
+
+{counter}
+	
 
             <div id="generated-results" class="col-sm-12 clock-view">
-
-				{counter}
                    
    				<f:for each="{produkte}" as="produkt">
                     <div class="col-sm-12 col-xs-12">
@@ -112,7 +115,7 @@
             <div class="col-sm-12 load_more">
                           
               	<input type="hidden" id="ms-getcat" value="{getCat}">
-                <input type="hidden" id="ms-page" value="0">
+                <input type="hidden" id="ms-page" value="1">
                  <input type="hidden" id="ms-link" value="index.php?id=192">
                 <input type="hidden" id="ms-limit" value="{limit}">
                          
