@@ -19,7 +19,7 @@
                           </numIndex>-->
                         <numIndex index="0" type="array">
                            <numIndex index="0">List View</numIndex>
-                           <numIndex index="1">Produkte->list</numIndex>
+                           <numIndex index="1">Produkte->list;Produkte->ajax</numIndex>
                         </numIndex>
                         <numIndex index="1" type="array">
                            <numIndex index="0">Detail View</numIndex>
