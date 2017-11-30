@@ -5,8 +5,9 @@
 
 <f:comment><f:debug>{parameters}</f:debug></f:comment>
 
-	{counter}
-
+    <div class="ms-infos01">Anzahl Elemente: {elements}</div>
+    <div class="ms-infos02">Seite <span class="ms-page">{page}</span> von <span class="ms-pages">{pages}</span></div>	
+	
     <f:for each="{produkte}" as="produkt">
         <div class="col-sm-12 col-xs-12">
             <div class="small-frame teaser-result-container">
@@ -65,7 +66,8 @@
 
     </f:for>
 
-
+    <input type="hidden" id="ms-pages" value="{pages}">
+    <input type="hidden" id="ms-elements" value="{elements}">
 
 </f:section>
 </html>
