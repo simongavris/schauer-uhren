@@ -77,7 +77,7 @@ class ProdukteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return array
      */
-    public function findLimited($param = null, $xID = null, $cat00 = null, $cat01 = null, $cat02 = null, $number = null, $limit = null)
+    public function findLimited($cat00 = null, $cat01 = null, $cat02 = null, $number = null, $limit = null)
     {
 		
         $uidCat00 = explode(",", $cat00);
