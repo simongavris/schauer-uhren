@@ -2,138 +2,135 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-
-    <div class="generated-products last-box">
-        <div class="row">
-            <div class="col-sm-12">
-
-                <div class="col-sm-12">
-                  <h3><f:translate key="tx_rmmattigschauer_domain_model_produkte.producttitle" /></h3>
-                </div>
-
-				
-
-                <div class="col-sm-6 col-xs-12">
-                    <div class="select-container">
-                        <div class="option-select">
-                            <label for="analog_kat" id="cat1-name"><f:translate key="tx_rmmattigschauer_domain_model_produkte.area" />:</label>
-                            <select id="analog_kat">
-                                <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
-                                <f:for each="{sub1Categories}" as="sub1Category">
-                                    <option value="{sub1Category.uid}">{sub1Category.title}</option>
-                                </f:for>
-                            </select>
-                        </div>
-                        <div class="option-select">
-                            <label for="analog_uw" id="cat2-name"><f:translate key="tx_rmmattigschauer_domain_model_produkte.clockwerk" />:</label>
-                            <select id="analog_uw">
-                                <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
-                                <f:for each="{sub2Categories}" as="sub2Category">
-                                    <option value="{sub2Category.uid}">{sub2Category.title}</option>
-                                </f:for>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="option-filter">
-                        <h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5>
-                        <div id="show-5" class="btn btn-default max-items">5</div>
-                        <div id="show-10" class="btn btn-default max-items">10</div>
-                        <div id="show-25" class="btn btn-default max-items">25</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="page-turn-button">
-                        <button class="ms_previous glyphicon glyphicon-arrow-left"></button>
-                        <p>{counter}</p>
-                        <button class="ms_next glyphicon glyphicon-arrow-right"></button>
-                    </div>
-                </div>
-            </div>
-
-	
-
-            <div id="generated-results" class="col-sm-12 clock-view">
-                   
-   				<f:for each="{produkte}" as="produkt">
-                    <div class="col-sm-12 col-xs-12">
-                        <div class="small-frame teaser-result-container">
-                            <div class="col-sm-4 result-teaser-image">
-
-                                <f:if condition="{produkt.image}">
-                                    <f:then>
-                                        <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="" height=""/>
-                                    </f:then>
-                                    <f:else>
-                                        <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-
-                                    </f:else>
-                                </f:if>
-
-                            </div>
-                            <div class="col-sm-8 result-teaser-text">
-                                <p style="margin-bottom: 0px;">{produkt.type}</p>
-                                <h5>Außenbereich</h5>
-
-                                <f:if condition="{produkt.productfile}">
-                                    <f:then>
-                                        <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
-                                    </f:then>
-                                    <f:else>
-
-                                    </f:else>
-                                </f:if>
-
-                                <a class="readMore-Text">Details</a>
-                                
-                                <f:link.page pageUid="{pageUid}" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Details Test</f:link.page>
-                                    
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="big-frame info-container" style="width: 1188px;">
-                    	<div class="col-sm-8 result-inner-text">
-                        	<f:format.raw>{produkt.techdata}</f:format.raw>
-                      	</div>
-                        <div class="col-sm-4 result-inner-picture">
-
-                            <f:if condition="{produkt.image}">
-                            	<f:then>
-                            		<f:image src="{produkt.image.uid}" treatIdAsReference="1" />
-                                </f:then>
-                                <f:else>
-                                	<img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-
-                                </f:else>
-                            </f:if>
-
-                        </div>
-                    </div>
-
-                </f:for>
-
-            </div>
-            
-            <div class="col-sm-12 load_more">
-                          
-              	<input type="hidden" id="ms-getcat" value="{getCat}">
-                <input type="hidden" id="ms-page" value="1">
-                 <input type="hidden" id="ms-link" value="index.php?id=192">
-                <input type="hidden" id="ms-limit" value="{limit}">
-                         
-                <!--<f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button" noCacheHash="1" noCache="1"><button>Go</button></f:link.action>-->
-                
-                <f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
-            
-            </div>
-
+    <div class="row">
+        <div class="col-sm-12">
+            <h3><f:translate key="tx_rmmattigschauer_domain_model_produkte.producttitle" /></h3>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <div class="select-container">
+                <div class="option-select">
+                    <label for="analog_kat" id="cat1-name"><f:translate key="tx_rmmattigschauer_domain_model_produkte.area" />:</label>
+                    <select id="analog_kat">
+                        <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
+                        <f:for each="{sub1Categories}" as="sub1Category">
+                            <option value="{sub1Category.uid}">{sub1Category.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+                <div class="option-select">
+                    <label for="analog_uw" id="cat2-name"><f:translate key="tx_rmmattigschauer_domain_model_produkte.clockwerk" />:</label>
+                    <select id="analog_uw">
+                        <option><f:translate key="tx_rmmattigschauer_domain_model_produkte.all" /></option>
+                        <f:for each="{sub2Categories}" as="sub2Category">
+                            <option value="{sub2Category.uid}">{sub2Category.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+            <div class="option-filter">
+                <h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5>
+                <div id="show-5" class="btn btn-default max-items">5</div>
+                <div id="show-10" class="btn btn-default max-items">10</div>
+                <div id="show-25" class="btn btn-default max-items">25</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row filter">
+        <div class="col-sm-12 col-xs-12">
+            <div class="page-turn-button">
+                <button class="ms_previous glyphicon glyphicon-arrow-left"></button>
+                {counter}
+                <button class="ms_next glyphicon glyphicon-arrow-right"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="generated-products last-box">
+
+        <f:for each="{produkte}" as="produkt">
+            <div class="row">
+                <div class="small-frame teaser-result-container col-sm-12">
+
+                    <div class="col-sm-2 result-teaser-image">
+                        <f:if condition="{produkt.image}">
+                            <f:then>
+                                <f:image src="{produkt.image.uid}" treatIdAsReference="1"/>
+                            </f:then>
+                            <f:else>
+                                <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                            </f:else>
+                        </f:if>
+                    </div>
+
+                    <div class="col-sm-10 result-teaser-text">
+                        <h3>{produkt.type}</h3>
+                        <h5>Außenbereich</h5>
+                        <a class="readMore-Text">Details</a>
+                        <f:if condition="{produkt.productfile}">
+                            <f:then>
+                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Produktblatt</f:link.page>
+                            </f:then>
+                            <f:else>
+                                <!-- // -->
+                            </f:else>
+                        </f:if>
+                        <f:link.page pageUid="{pageUid}" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Datenblatt</f:link.page>
+                    </div>
+
+                </div>
+
+
+
+                <div class="big-frame info-container col-sm-12">
+
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-2 result-inner-text">
+                            <f:format.raw>{produkt.techdata}</f:format.raw>
+                        </div>
+
+                        <div class="col-sm-6 result-inner-picture">
+                            <f:if condition="{produkt.image}">
+                                <f:then>
+                                    <f:image src="{produkt.image.uid}" treatIdAsReference="1" />
+                                </f:then>
+                                <f:else>
+                                    <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </f:for>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 load_more">
+
+            <input type="hidden" id="ms-getcat" value="{getCat}">
+            <input type="hidden" id="ms-page" value="1">
+            <input type="hidden" id="ms-link" value="index.php?id=192">
+            <input type="hidden" id="ms-limit" value="{limit}">
+
+            <!--<f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button" noCacheHash="1" noCache="1"><button>Go</button></f:link.action>-->
+
+            <f:link.action pageUid="192" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
+
+        </div>
+    </div>
 </f:section>
 </html>

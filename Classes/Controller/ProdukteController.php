@@ -135,6 +135,8 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
             $y = "Seite: ".$number." - Anzahl pro Seite: ".$limit." - Seitenanzahl: "." - ";
 
+            $counter = "Anzahl: ".$nprodukte." von ".$nall." - Seite: 1 von ".$nperpage;
+
             if(!$produkt){
                 return "keine Produkte";
             }else{
