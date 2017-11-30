@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="small-frame teaser-result-container col-sm-12">
 
-                    <div class="col-sm-2 result-teaser-image">
+                    <div class="col-sm-4 result-teaser-image">
                         <f:if condition="{produkt.image}">
                             <f:then>
                                 <f:image src="{produkt.image.uid}" treatIdAsReference="1"/>
@@ -77,7 +77,7 @@
                         </f:if>
                     </div>
 
-                    <div class="col-sm-10 result-teaser-text">
+                    <div class="col-sm-8 result-teaser-text">
                         <h3>{produkt.type}</h3>
                         <h5>Außenbereich</h5>
                         <a class="readMore-Text">Details</a>
@@ -99,7 +99,7 @@
                 <div class="big-frame info-container col-sm-12">
 
                     <div class="row">
-                        <div class="col-sm-4 col-sm-offset-2 result-inner-text">
+                        <div class="col-sm-6 result-inner-text">
                             <f:format.raw>{produkt.techdata}</f:format.raw>
                         </div>
 
@@ -134,7 +134,7 @@
 
             <!--<f:link.action pageUid="194" pageType="0" action="ajax" controller="Produkte" class="load_button" noCacheHash="1" noCache="1"><button>Go</button></f:link.action>-->
 
-            <f:link.action pageUid="194" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
+            <f:link.action pageUid="194n" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
 
         </div>
     </div>
