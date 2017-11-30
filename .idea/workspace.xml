@@ -4,7 +4,7 @@
     <list default="true" id="bb1ee507-86ef-4d30-8416-bbc8716c3911" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Private/Templates/Produkte/Ajax.html" afterPath="$PROJECT_DIR$/Resources/Private/Templates/Produkte/Ajax.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Public/Js/ajax.js" afterPath="$PROJECT_DIR$/Resources/Public/Js/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Private/Templates/Produkte/List.html" afterPath="$PROJECT_DIR$/Resources/Private/Templates/Produkte/List.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="List.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Produkte/List.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="748">
+              <caret line="67" column="75" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="67" selection-end-column="75" />
               <folding>
                 <element signature="n#style#0;n#f:link.page#0;n#f:then#0;n#f:if#0;n#div#1;n#div#0;n#div#0;n#f:for#0;n#div#3;n#f:section#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#f:link.page#0;n#div#1;n#div#0;n#div#0;n#f:for#0;n#div#3;n#f:section#0;n#html#0;n#!!top" expanded="true" />
@@ -42,18 +42,8 @@
       <file leaf-file-name="Ajax.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Produkte/Ajax.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Ajax/List.html">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+              <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -98,9 +88,9 @@
         <option value="$PROJECT_DIR$/Resources/Private/Partials/Produkte/Properties.html" />
         <option value="$PROJECT_DIR$/Configuration/TypoScript/setup.ts" />
         <option value="$PROJECT_DIR$/Classes/Controller/ProdukteController.php" />
+        <option value="$PROJECT_DIR$/Resources/Public/Js/ajax.js" />
         <option value="$PROJECT_DIR$/Resources/Private/Templates/Produkte/List.html" />
         <option value="$PROJECT_DIR$/Resources/Private/Templates/Produkte/Ajax.html" />
-        <option value="$PROJECT_DIR$/Resources/Public/Js/ajax.js" />
       </list>
     </option>
   </component>
@@ -292,7 +282,7 @@
       <workItem from="1511268770808" duration="1294000" />
       <workItem from="1511346249983" duration="2070000" />
       <workItem from="1511790026376" duration="3183000" />
-      <workItem from="1512034273037" duration="8653000" />
+      <workItem from="1512034273037" duration="10781000" />
     </task>
     <task id="LOCAL-00001" summary="Removing Button-Classes from Links and adding upper view and ammount buttons to same div">
       <created>1508230443653</created>
@@ -476,11 +466,25 @@
       <option name="project" value="LOCAL" />
       <updated>1512062787976</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="number fixes">
+      <created>1512066298917</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1512066298917</updated>
+    </task>
+    <task id="LOCAL-00028" summary="view fixes">
+      <created>1512066887727</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1512066887727</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55937000" />
+    <option name="totallyTimeSpent" value="58065000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,8 +525,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removing Button-Classes from Links and adding upper view and ammount buttons to same div" />
-    <MESSAGE value="adding Label for second Cat." />
     <MESSAGE value="adding Label instead of &lt;p&gt; tags" />
     <MESSAGE value="updating bootstrap columns" />
     <MESSAGE value="adding a div" />
@@ -546,7 +548,9 @@
     <MESSAGE value="changing page-turn buttons" />
     <MESSAGE value="changing list.html" />
     <MESSAGE value="changing some layouts again" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing some layouts again" />
+    <MESSAGE value="number fixes" />
+    <MESSAGE value="view fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="view fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -923,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Ajax/List.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Public/Js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1211">
@@ -947,18 +943,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Ajax/List.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Produkte/Ajax.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="594">
+          <caret line="27" column="26" lean-forward="false" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Private/Templates/Produkte/List.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="748">
+          <caret line="67" column="75" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="67" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#f:link.page#0;n#f:then#0;n#f:if#0;n#div#1;n#div#0;n#div#0;n#f:for#0;n#div#3;n#f:section#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#f:link.page#0;n#div#1;n#div#0;n#div#0;n#f:for#0;n#div#3;n#f:section#0;n#html#0;n#!!top" expanded="true" />

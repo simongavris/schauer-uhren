@@ -3,7 +3,6 @@
 
 <f:section name="main">
 
-    <f:comment><f:debug>{parameters}</f:debug></f:comment>
     <div class="generated-products">
         <div class="ms-infos01">Anzahl Elemente: {elements}</div>
         <div class="ms-infos02">Seite <span class="ms-page">{page}</span> von <span class="ms-pages">{pages}</span></div>
@@ -26,7 +25,7 @@
 
                     </div>
                     <div class="col-sm-8 result-teaser-text">
-                        <p style="margin-bottom: 0px;">{produkt.type}</p>
+                        <p>{produkt.type}</p>
                         <h5>Außenbereich</h5>
 
                         <f:if condition="{produkt.productfile}">
