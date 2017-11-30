@@ -114,42 +114,60 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
         $parameters = $this->request->getArguments();
 
-        if(isset($parameters['product'])){
+        //if(isset($parameters['product'])){
 
-            $param = (int)$parameters['product'];
-            $xID = (int)$parameters['xID'];
             $cat00 = (int)$parameters['cat00'];
             $cat01 = (int)$parameters['cat01'];
             $cat02 = (int)$parameters['cat02'];
             $number = (int)$parameters['number'];
             $limit = (int)$parameters['limit'];
 
-            if($cat01 != null || $cat02 != null){
-                $produkt = $this->produkteRepository->findLimited($param, $xID, $cat00, $cat01, $cat02, $number, $limit);
-            }else{
+           if(($cat01 != null && $cat01 != 'Alle') || ($cat02 != null && $cat02 != 'Alle')){
+                $produkt = $this->produkteRepository->findLimited($cat00, $cat01, $cat02, $number, $limit);
+		   
+		$all = $this->produkteRepository->findLimited($cat00, $cat01, $cat02);
+		$nprodukte = count($all);			
+		// round up and make integer
+		$nperpage = intval(ceil($nprodukte / $limit));
+            
+	   }else{
                 $produkt = $this->produkteRepository->findByCatUids($cat00, $limit, $number);
+		
+		$all = $this->produkteRepository->findByCatUids($cat00);
+		$nprodukte = count($all);			
+		// round up and make integer
+		$nperpage = intval(ceil($nprodukte / $limit));
+		   
             }
 
-            $x = count($produkt);
+            //$x = count($produkt);
+            //$y = "Seite: ".$number." - Anzahl pro Seite: ".$limit." - Seitenanzahl: "." - ";
 
-            $y = "Seite: ".$number." - Anzahl pro Seite: ".$limit." - Seitenanzahl: "." - ";
-
-            $counter = "Anzahl: ".$nprodukte." von ".$nall." - Seite: 1 von ".$nperpage;
+            //$counter = "Anzahl: ".$nprodukte." von ".$nall." - Seite: 1 von ".$nperpage;
 
             if(!$produkt){
                 return "keine Produkte";
             }else{
+		    
+		if($number==0)
+			$number = 1;
+				
+		if($nperpage==0)
+			$nperpage = 1;    
 
-                $this->view->assign('x', $x);
-                $this->view->assign('y', $y);
+                //$this->view->assign('x', $x);
+                //$this->view->assign('y', $y);
                 $this->view->assign('parameters', $parameters);
                 $this->view->assign('produkte', $produkt);
+		$this->view->assign('elements', $nprodukte);
+		$this->view->assign('pages',$nperpage);
+		$this->view->assign('page',$number);
 
             }
 
-        }else{
+        //}else{
             //echo "empty";	
-        }
+        //}
 		
     }
     
