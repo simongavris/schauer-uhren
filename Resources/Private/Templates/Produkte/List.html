@@ -58,6 +58,9 @@
 
 
     <div class="generated-products last-box">
+        
+       <div class="ms-infos01">Anzahl Elemente: {elements}</div>
+   	    <div class="ms-infos02">Seite <span class="ms-page">1</span> von <span class="ms-pages">{pages}</span></div>
 
         <f:for each="{produkte}" as="produkt">
             <div class="row">
@@ -116,6 +119,9 @@
             </div>
 
         </f:for>
+        
+        <input type="hidden" id="ms-pages" value="{pages}">
+        <input type="hidden" id="ms-elements" value="{elements}">
 
     </div>
     <div class="row">
