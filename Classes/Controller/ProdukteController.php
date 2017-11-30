@@ -79,6 +79,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $pageUid = (int)$this->settings['detailPid'];
         
         $limit = 5;
+	$page = 0;
                 
         /* new Categories */
 
@@ -98,6 +99,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $this->view->assign('counter', $counter);
         $this->view->assign('elements', $nprodukte);
 	$this->view->assign('pages',$nperpage);
+        $this->view->assign('page',$page);
         $this->view->assign('getCat', $getCat);
         $this->view->assign('limit', $limit);
         $this->view->assign('pageUid', $pageUid);
@@ -148,9 +150,6 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             if(!$produkt){
                 return "keine Produkte";
             }else{
-		    
-		if($number==0)
-			$number = 1;
 				
 		if($nperpage==0)
 			$nperpage = 1;    
@@ -161,7 +160,7 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
                 $this->view->assign('produkte', $produkt);
 		$this->view->assign('elements', $nprodukte);
 		$this->view->assign('pages',$nperpage);
-		$this->view->assign('page',$number);
+		$this->view->assign('page',$number+1);
 
             }
 
