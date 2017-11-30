@@ -5,7 +5,7 @@ $( document ).ready(function() {
 		
 		/*var ajaxUrl = 'index.php?id=192&L=0&no_cache=1&tx_rmmattigschauer_msproducts%5Baction%5D=ajax&tx_rmmattigschauer_msproducts%5Bcontroller%5D=Produkte';*/
 		var ajaxUrl = element.attr('href');
-		var container = element.closest('.generated-products').find('#generated-results');
+		var container = element.closest('.tx-rm-mattigschauer').find('.generated-results');
 		var limit = $('#ms-limit').val();
 		
 		if(!page)
@@ -67,22 +67,22 @@ $( document ).ready(function() {
 		
 	});
 	
-	$('.generated-products').on('change', '#analog_kat', function(e) {
+	$('.tx-rm-mattigschauer').on('change', '#analog_kat', function(e) {
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');//.find('.load_more');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');//.find('.load_more');
 		$('#ms-page').val(1);
 
 		loadElements(element, selBox01, selBox02);
 	
 	});
 	
-	$('.generated-products').on('change', '#analog_uw', function(e) {
+	$('.tx-rm-mattigschauer').on('change', '#analog_uw', function(e) {
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		$('#ms-page').val(1);
 
 		loadElements(element, selBox01, selBox02);
@@ -91,13 +91,13 @@ $( document ).ready(function() {
 	
 		/* next button */
 	
-	$('.generated-products').on('click', '.ms_next', function(e) {
+	$('.tx-rm-mattigschauer').on('click', '.ms_next', function(e) {
 		
 		//console.log("next");
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		var limit = $('#ms-limit').val();
 		var pages = parseInt($('#ms-pages').val());
 		var page = 0;
@@ -115,13 +115,13 @@ $( document ).ready(function() {
 		
 	});
 	
-	$('.generated-products').on('click', '.ms_previous', function(e) {
+	$('.tx-rm-mattigschauer').on('click', '.ms_previous', function(e) {
 		
 		//console.log("previous");
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		var limit = $('#ms-limit').val();
 		var page = 0;
 		
@@ -138,33 +138,33 @@ $( document ).ready(function() {
 		
 	});
 	
-	$('.generated-products').on('click', '#show-5', function(e) {
+	$('.tx-rm-mattigschauer').on('click', '#show-5', function(e) {
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		$('#ms-limit').val('5');
 
 		loadElements(element, selBox01, selBox02, 0, 5);
 		
 	});
 	
-	$('.generated-products').on('click', '#show-10', function(e) {
+	$('.tx-rm-mattigschauer').on('click', '#show-10', function(e) {
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		$('#ms-limit').val('10');
 
 		loadElements(element, selBox01, selBox02, 0, 10);
 		
 	});
 	
-	$('.generated-products').on('click', '#show-25', function(e) {
+	$('.tx-rm-mattigschauer').on('click', '#show-25', function(e) {
 		
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
-		var element = $(this).closest('.generated-products').find('.load_button');
+		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		$('#ms-limit').val('25');
 
 		loadElements(element, selBox01, selBox02, 0, 25);
