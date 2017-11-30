@@ -5,7 +5,7 @@ $( document ).ready(function() {
 		
 		/*var ajaxUrl = 'index.php?id=192&L=0&no_cache=1&tx_rmmattigschauer_msproducts%5Baction%5D=ajax&tx_rmmattigschauer_msproducts%5Bcontroller%5D=Produkte';*/
 		var ajaxUrl = element.attr('href');
-		var container = element.closest('.tx-rm-mattigschauer').find('.generated-results');
+		var container = $('.tx-rm-mattigschauer').find('.generated-products');
 		var limit = $('#ms-limit').val();
 		
 		if(!page)
@@ -32,7 +32,7 @@ $( document ).ready(function() {
 				success: function (result) {
 					
 					//console.log("success");
-					var ajaxDom = $(result).find('.tx-rm-mattigschauer').children();
+					var ajaxDom = $(result).find('.generated-products').children();
 					
 					if(!page)
 						page = 1;
