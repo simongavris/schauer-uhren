@@ -35,7 +35,7 @@ $( document ).ready(function() {
 					var ajaxDom = $(result).find('.generated-products').children();
 					
 					if(!page)
-						page = 1;
+						page = 0;
 					
 					$('#ms-page').val(page);
 					
@@ -116,15 +116,15 @@ $( document ).ready(function() {
 	});
 	
 	$('.tx-rm-mattigschauer').on('click', '.ms_previous', function(e) {
-		
+
 		//console.log("previous");
-		
+
 		var selBox01 = $('#analog_kat').find(":selected").val();
 		var selBox02 = $('#analog_uw').find(":selected").val();
 		var element = $(this).closest('.tx-rm-mattigschauer').find('.load_button');
 		var limit = $('#ms-limit').val();
 		var page = 0;
-		
+
 		if(parseInt($('#ms-page').val()) > 0){
 			//console.log("geht no:"+parseInt($('#ms-page').val()));
 			page = parseInt($('#ms-page').val())-1;
