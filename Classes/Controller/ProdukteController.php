@@ -92,13 +92,12 @@ class ProdukteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	
         $produkte = $this->produkteRepository->findByCatUids($getCat, $limit);
         
-        $nprodukte = count($produkte);
-        $nall = count($all);
-        $nperpage = intval($nall / $limit);
-
-        $counter = "Anzahl: ".$nprodukte." von ".$nall." - Seite: 1 von ".$nperpage; 
-		
+        $nprodukte = count($all);
+        $nperpage = intval(ceil($nprodukte / $limit));
+	
         $this->view->assign('counter', $counter);
+        $this->view->assign('elements', $nprodukte);
+	$this->view->assign('pages',$nperpage);
         $this->view->assign('getCat', $getCat);
         $this->view->assign('limit', $limit);
         $this->view->assign('pageUid', $pageUid);
