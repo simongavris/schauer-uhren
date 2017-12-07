@@ -34,7 +34,6 @@
 
         <div class="col-sm-6 col-xs-12">
             <div class="option-filter">
-                <!--h5 id="toggle-result-view"><span class="glyphicon glyphicon-th-large"></span></h5-->
                 <div id="show-5" class="btn btn-default max-items">5</div>
                 <div id="show-10" class="btn btn-default max-items">10</div>
                 <div id="show-25" class="btn btn-default max-items">25</div>
@@ -45,29 +44,30 @@
 
 
 
-    <div class="row filter">
-        <div class="col-sm-12 col-xs-12">
-            <div class="ms-infos01">{elements} Uhren gefunden.</div>
-            <div class="page-turn-button">
-                <button class="ms_previous glyphicon glyphicon-arrow-left"></button>
-                 <div class="ms-infos02">Seite <span class="ms-page">1</span> von <span class="ms-pages">{pages}</span></div>
-                <button class="ms_next glyphicon glyphicon-arrow-right"></button>
-            </div>
-        </div>
-    </div>
 
 
 
     <div class="generated-products last-box">
-        
+        <div class="ms-infos01">{elements} Uhren gefunden.</div>
+
+        <div class="row filter">
+            <div class="col-sm-12 col-xs-12">
+                <div class="page-turn-button">
+                    <div class="ms_previous glyphicon glyphicon-arrow-left invisible"></div>
+                    <p class="ms-infos02">Seite <span class="ms-page">1</span> von <span class="ms-pages">{pages}</span></p>
+                    <div class="ms_next glyphicon glyphicon-arrow-right {f:if(condition:'{pages} == 1',then:'invisible')}"></div>
+                </div>
+            </div>
+        </div>
+
+
 
 
 
         <f:for each="{produkte}" as="produkt">
             <div class="row">
-                <div class="small-frame teaser-result-container col-sm-12">
-
-                    <div class="col-sm-4 result-teaser-image">
+                <div class="small-frame teaser-result-container">
+                    <div class="col-sm-2 result-teaser-image">
                         <f:if condition="{produkt.image}">
                             <f:then>
                                 <f:image src="{produkt.image.uid}" treatIdAsReference="1"/>
@@ -77,34 +77,26 @@
                             </f:else>
                         </f:if>
                     </div>
-
                     <div class="col-sm-8 result-teaser-text">
                         <h3>{produkt.type}</h3>
                         <h5>Außenbereich</h5>
                         <a class="readMore-Text">Details</a>
                         <f:if condition="{produkt.productfile}">
                             <f:then>
-                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Produktblatt</f:link.page>
+                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Produktblatt PDF</f:link.page>
                             </f:then>
                             <f:else>
-                                <!-- // -->
                             </f:else>
                         </f:if>
                         <f:link.page pageUid="{pageUid}" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Datenblatt</f:link.page>
                     </div>
-
                 </div>
-
-
-
                 <div class="big-frame info-container col-sm-12">
-
                     <div class="row">
-                        <div class="col-sm-6 result-inner-text">
+                        <div class="col-sm-5 col-sm-offset-2 result-inner-text">
                             <f:format.raw>{produkt.techdata}</f:format.raw>
                         </div>
-
-                        <div class="col-sm-6 result-inner-picture">
+                        <div class="col-sm-5 result-inner-picture">
                             <f:if condition="{produkt.image}">
                                 <f:then>
                                     <f:image src="{produkt.image.uid}" treatIdAsReference="1" />
@@ -116,18 +108,22 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </f:for>
-        
         <input type="hidden" id="ms-pages" value="{pages}">
         <input type="hidden" id="ms-elements" value="{elements}">
-
+        <div class="row filter">
+            <div class="col-sm-12 col-xs-12">
+                <div class="page-turn-button">
+                    <div class="ms_previous glyphicon glyphicon-arrow-left invisible"></div>
+                    <p class="ms-infos02">Seite <span class="ms-page">1</span> von <span class="ms-pages">{pages}</span></p>
+                    <div class="ms_next glyphicon glyphicon-arrow-right {f:if(condition:'{pages} == 1',then:'invisible')}"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-12 load_more">
-
             <input type="hidden" id="ms-getcat" value="{getCat}">
             <input type="hidden" id="ms-page" value="{page}">
             <input type="hidden" id="ms-link" value="index.php?id=194">
@@ -135,7 +131,7 @@
 
             <!--<f:link.action pageUid="194" pageType="0" action="ajax" controller="Produkte" class="load_button" noCacheHash="1" noCache="1"><button>Go</button></f:link.action>-->
 
-            <f:link.action pageUid="194n" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
+            <f:link.action pageUid="194" pageType="0" action="ajax" controller="Produkte" class="load_button" style="display:none;"><button>Go</button></f:link.action>
 
         </div>
     </div>

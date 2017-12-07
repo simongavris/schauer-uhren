@@ -3,78 +3,78 @@
 
 <f:section name="main">
 
+    <f:comment><f:debug>{parameters}</f:debug></f:comment>
     <div class="generated-products">
-        <div class="ms-infos01">Anzahl Elemente: {elements}</div>
-        <div class="ms-infos02">Seite <span class="ms-page">{page}</span> von <span class="ms-pages">{pages}</span></div>
+        <div class="ms-infos01">{elements} Uhren gefunden.</div>
 
+        <div class="row filter">
+            <div class="col-sm-12 col-xs-12">
+                <div class="page-turn-button">
+                    <div class="ms_previous glyphicon glyphicon-arrow-left {f:if(condition:'{page} == 1',then:'invisible')}"></div>
+                    <p class="ms-infos02">Seite <span class="ms-page">{page}</span> von <span class="ms-pages">{pages}</span></p>
+                    <div class="ms_next glyphicon glyphicon-arrow-right {f:if(condition:'{page} == {pages}',then:'invisible')}"></div>
+                </div>
+            </div>
+        </div>
 
         <f:for each="{produkte}" as="produkt">
             <div class="row">
-                <div class="small-frame teaser-result-container col-sm-12">
-                    <div class="col-sm-4 result-teaser-image">
-
+                <div class="small-frame teaser-result-container">
+                    <div class="col-sm-2 result-teaser-image">
                         <f:if condition="{produkt.image}">
                             <f:then>
                                 <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="500" height="" absolute="1" />
                             </f:then>
                             <f:else>
                                 <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-
                             </f:else>
                         </f:if>
-
                     </div>
                     <div class="col-sm-8 result-teaser-text">
-                        <p>{produkt.type}</p>
+                        <h3>{produkt.type}</h3>
                         <h5>Außenbereich</h5>
-
+                        <a class="readMore-Text">Details</a>
                         <f:if condition="{produkt.productfile}">
                             <f:then>
-                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Download</f:link.page>
+                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Produktblatt PDF</f:link.page>
                             </f:then>
                             <f:else>
-
                             </f:else>
                         </f:if>
-
-                        <a class="readMore-Text">Details</a>
-
-                        <f:link.page pageUid="{pageUid}" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Details Test</f:link.page>
-
-
+                        <f:link.page pageUid="{pageUid}" additionalParams="{tx_rmmattigschauer_msproducts: {produkt : produkt.uid}}" style="width: 100%;">Datenblatt</f:link.page>
                     </div>
                 </div>
-            </div>
-            <div class="big-frame info-container col-sm-12">
-
-                <div class="row">
-
-
-                    <div class="col-sm-6 result-inner-text">
-                        <f:format.raw>{produkt.techdata}</f:format.raw>
-                    </div>
-                    <div class="col-sm-6 result-inner-picture">
-
-                        <f:if condition="{produkt.image}">
-                            <f:then>
-                                <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="500" height="" absolute="1" />
-                            </f:then>
-                            <f:else>
-                                <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
-
-                            </f:else>
-                        </f:if>
-
+                <div class="big-frame info-container col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-5 col-sm-offset-2 result-inner-text">
+                            <f:format.raw>{produkt.techdata}</f:format.raw>
+                        </div>
+                        <div class="col-sm-5 result-inner-picture">
+                            <f:if condition="{produkt.image}">
+                                <f:then>
+                                    <f:image src="{produkt.image.uid}" treatIdAsReference="1" width="500" height="" absolute="1" />
+                                </f:then>
+                                <f:else>
+                                    <img src="http://www.mattig-schauer.at/typo3temp/pics/63b67ff478.jpg" />
+                                </f:else>
+                            </f:if>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </f:for>
-
         <input type="hidden" id="ms-pages" value="{pages}">
         <input type="hidden" id="ms-elements" value="{elements}">
-
+        <div class="row filter">
+            <div class="col-sm-12 col-xs-12">
+                <div class="page-turn-button">
+                    <div class="ms_previous glyphicon glyphicon-arrow-left {f:if(condition:'{page} == 1',then:'invisible')}"></div>
+                    <p class="ms-infos02">Seite <span class="ms-page">{page}</span> von <span class="ms-pages">{pages}</span></p>
+                    <div class="ms_next glyphicon glyphicon-arrow-right {f:if(condition:'{page} == {pages}',then:'invisible')}"></div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </f:section>
 </html>
