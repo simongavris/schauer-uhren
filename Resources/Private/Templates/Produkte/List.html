@@ -79,11 +79,11 @@
                     </div>
                     <div class="col-sm-8 result-teaser-text">
                         <h3>{produkt.type}</h3>
-                        <h5>Außenbereich</h5>
+                        <!--<h5>Category</h5>-->
                         <a class="readMore-Text">Details</a>
                         <f:if condition="{produkt.productfile}">
                             <f:then>
-                                <f:link.page pageUid="{f:uri.image(src:produkt.productfile.uid,treatIdAsReference:1)}" target="_blank" style="width: 100%;">Produktblatt PDF</f:link.page>
+                                <f:link.page pageUid="{produkt.productfile.originalResource.publicUrl}" target="_blank" absolute="true" style="width: 100%;">Produktblatt PDF</f:link.page>
                             </f:then>
                             <f:else>
                             </f:else>
